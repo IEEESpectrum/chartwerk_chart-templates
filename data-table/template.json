@@ -1,0 +1,321 @@
+{
+    "axes": {
+        "base": {
+            "dateFormat": "%-m/%-d/%Y",
+            "format": {
+                "double": {
+                    "customTicks": [],
+                    "dateString": "Y",
+                    "frequency": 1,
+                    "ticks": 7
+                },
+                "single": {
+                    "customTicks": [],
+                    "dateString": "Y",
+                    "frequency": 2,
+                    "ticks": 7
+                }
+            },
+            "label": "",
+            "max": null,
+            "min": null,
+            "prefix": "",
+            "shadedRegions": [],
+            "suffix": "",
+            "type": "date"
+        },
+        "color": {
+            "byFacet": false,
+            "domain": [
+                "Crystalline Si Cells",
+                "Emerging PV",
+                "Multijunction Cells",
+                "Single-junction GaAs",
+                "Thin-film Technologies"
+            ],
+            "ignoreScale": false,
+            "quantize": false,
+            "quantizeProps": {
+                "column": null,
+                "groups": 0,
+                "reverseColors": false
+            },
+            "range": [
+                "#E34E36",
+                "#329CEB",
+                "#8554BF",
+                "#52B033",
+                "#FF8F24"
+            ],
+            "scheme": "categorical.default"
+        },
+        "scale": {
+            "prefix": "",
+            "suffix": ""
+        },
+        "value": {
+            "format": {
+                "double": {
+                    "customTicks": [],
+                    "ticks": 7
+                },
+                "single": {
+                    "customTicks": [],
+                    "ticks": 7
+                }
+            },
+            "label": "",
+            "max": null,
+            "min": null,
+            "prefix": "",
+            "shadedRegions": [],
+            "suffix": "%"
+        }
+    },
+    "data": [
+        {
+            "Cell category": "Emerging PV",
+            "Cell type": "perovskite cells (not stabilized)",
+            "Date": "3/1/2016",
+            "Efficiency (%)": 22.1,
+            "Group(s)": "KRICT; UNIST"
+        },
+        {
+            "Cell category": "Emerging PV",
+            "Cell type": "quantum dot cells",
+            "Date": "3/1/2016",
+            "Efficiency (%)": 11.3,
+            "Group(s)": "U. Toronto"
+        },
+        {
+            "Cell category": "Thin-film Technologies",
+            "Cell type": "CdTe",
+            "Date": "2/1/2016",
+            "Efficiency (%)": 22.1,
+            "Group(s)": "First Solar"
+        },
+        {
+            "Cell category": "Multijunction Cells",
+            "Cell type": "two-junction (non-concentrator)",
+            "Date": "1/1/2016",
+            "Efficiency (%)": 31.6,
+            "Group(s)": "Alta Devices"
+        },
+        {
+            "Cell category": "Emerging PV",
+            "Cell type": "perovskite cells (not stabilized)",
+            "Date": "12/1/2015",
+            "Efficiency (%)": 21,
+            "Group(s)": "EPFL"
+        },
+        {
+            "Cell category": "Crystalline Si Cells",
+            "Cell type": "multicrystalline",
+            "Date": "11/1/2015",
+            "Efficiency (%)": 21.25,
+            "Group(s)": "Trina Solar"
+        },
+        {
+            "Cell category": "Emerging PV",
+            "Cell type": "quantum dot cells",
+            "Date": "11/1/2015",
+            "Efficiency (%)": 10.6,
+            "Group(s)": "U. Toronto"
+        },
+        {
+            "Cell category": "Crystalline Si Cells",
+            "Cell type": "single crystal (non-concentrator)",
+            "Date": "10/1/2015",
+            "Efficiency (%)": 25.2,
+            "Group(s)": "SunPower"
+        },
+        {
+            "Cell category": "Thin-film Technologies",
+            "Cell type": "CIGS",
+            "Date": "8/1/2015",
+            "Efficiency (%)": 22.3,
+            "Group(s)": "Solar Frontier"
+        },
+        {
+            "Cell category": "Single-junction GaAs",
+            "Cell type": "single crystal",
+            "Date": "5/1/2015",
+            "Efficiency (%)": 27.4,
+            "Group(s)": "LG Electronics"
+        },
+        {
+            "Cell category": "Emerging PV",
+            "Cell type": "organic cells (various types)",
+            "Date": "5/1/2015",
+            "Efficiency (%)": 11.5,
+            "Group(s)": "HKUST"
+        },
+        {
+            "Cell category": "Emerging PV",
+            "Cell type": "quantum dot cells",
+            "Date": "3/1/2015",
+            "Efficiency (%)": 9.9,
+            "Group(s)": "U. Toronto"
+        },
+        {
+            "Cell category": "Thin-film Technologies",
+            "Cell type": "amorphous Si:H (stabilized)",
+            "Date": "1/1/2015",
+            "Efficiency (%)": 13.6,
+            "Group(s)": "AIST"
+        }
+    ],
+    "datamap": {
+        "annotations": [],
+        "base": "Date",
+        "custom": {},
+        "facet": "Group(s)",
+        "ignore": [],
+        "scale": "Cell category",
+        "series": [],
+        "sort": [
+            "Date",
+            "Cell type",
+            "Cell category",
+            "Group(s)",
+            "Efficiency (%)"
+        ],
+        "value": null
+    },
+    "embed": {
+        "dimensions": {
+            "double": {
+                "height": 568.6000366210938,
+                "width": 620
+            },
+            "single": {
+                "height": 469.3999938964844,
+                "width": 300
+            }
+        }
+    },
+    "margins": {
+        "double": {
+            "bottom": 0.040000000000000036,
+            "left": 0,
+            "right": 0,
+            "top": 0.03
+        },
+        "single": {
+            "bottom": 0.040000000000000036,
+            "left": 0,
+            "right": 0,
+            "top": 0.03
+        }
+    },
+    "scripts": {
+        "dependencies": {
+            "scripts": [
+                "https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js",
+                "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"
+            ],
+            "styles": []
+        },
+        "draw": "function draw(){\n\n    var keys = chartwerk.datamap.sort;\n    \n    var table = d3.select(\"#chart\")\n        .append(\"div\")\n        .attr(\"id\",\"table\")\n        .append(\"table\");\n    \n    var thead = table.append(\"thead\");\n    \n    keys.forEach(function(k){\n        thead.append(\"th\")\n            .attr(\"class\", \"sort\")\n            .attr(\"data-sort\", k)\n            .text(k);\n    });\n    \n    var tbody = table.append(\"tbody\")\n            .attr(\"class\", \"list\");\n    \n    chartwerk.data.forEach(function(d){\n        var tr = tbody.append(\"tr\");\n        keys.forEach(function(k){\n            tr.append(\"td\")\n                .attr(\"class\", \"td \"+ k)\n                .text(d[k]);\n        });\n    });\n    \n    var tableOptions = {\n      valueNames: keys\n    };\n\n    var tableList = new List('table', tableOptions);\n    \n    // List\n    \n    var list = d3.select(\"#chart\")\n        .append(\"div\")\n        .attr(\"id\",\"list\")\n        .attr(\"class\",\"hidden\");\n    \n    list.append(\"ul\")\n        .attr(\"class\", \"list\");\n    \n    paras = keys.map(function(k){\n        return '<p><span class=\"list-hed\">'+k+'</span> <span class=\"'+k+'\"></span></p>';\n    }).join('');\n    \n    var listOptions = {\n      valueNames: keys,\n      item: '<li>'+paras+'</li>'\n    };\n    \n    var listList = new List('list', listOptions, chartwerk.data);\n    \n    function switchStyle(){\n        if($(\"#chart\").width() < $(\"#table\")[0].scrollWidth){\n            $(\"#table\").addClass(\"hidden\");\n            $(\"#list\").removeClass(\"hidden\");\n        }\n    }\n    setTimeout(function(){\n        switchStyle();\n    }, 100);\n    \n\n}",
+        "helper": "var werkHelper = {};",
+        "html": "<div id='chart-header'>\n\t<h2 id='headline'></h2>\n\t<div id='chatter'></div> \n</div> \n<div id='chart-ui'>\n\t<!--You can put any necessary buttons, etc., here.-->\n</div>\n<div id='chart-legend'></div>\n<div id='chart'></div> \n<div id='chart-footer'> \n\t<div id='footnote'></div> \n\t<div id='source'></div> \n\t<div id='author'></div> \n</div>",
+        "styles": "#chartwerk {\n    width:620px;\n}\n#chartwerk div, #chartwerk p{\n    font-family:'Theinhardt-Regular', sans-serif;\n}\n#chartwerk.single{\n    width:300px;\n    max-width:100%;\n    overflow:hidden;\n    margin:0;\n}\n#chartwerk #headline {\n    font-family:'Theinhardt-Medium', sans-serif;\n    font-weight:normal;\n    font-size:24px;\n}\n#chartwerk #chatter {\n    margin-top:5px;\n    font-size:14px;\n    line-height:19px;\n}\n#chartwerk #footnote,\n#chartwerk #source,\n#chartwerk #author {\n    font-size:11px;\n    color:grey;\n\n}\n#chartwerk #author {\n    text-align:right;\n}\n#chartwerk #chart{\n    background-color:white;\n}\n#chartwerk table{\n    font-size:14px;\n    font-variant-numeric: tabular-nums;\n    -moz-font-feature-settings: \"tnum\";\n    -webkit-font-feature-settings: \"tnum\";\n    font-feature-settings: \"tnum\";\n    line-height:19px;\n    margin:10px 0 20px;\n    overflow-x:visible;\n    text-align:left;\n    width:100%;\n}\n#chartwerk table th, #chartwerk table td{\n    padding:2px 10px 2px 5px;\n    \n}\n#chartwerk table th{\n    font-family:'Theinhardt-Medium', sans-serif;\n    font-weight:normal;\n    border-bottom:2px solid grey;\n    cursor:pointer;\n    vertical-align: bottom;\n}\n#chartwerk table th:hover{\n    background-color:lightgrey;\n}\n#chartwerk table tbody tr:first-child td{\n    padding-top:10px;\n}\n#chartwerk table tbody tr{\n    border-bottom:1px solid lightgrey;\n}\n#chartwerk table tr:hover{\n    background-color:#ccc !important;\n}\n#chartwerk #list{\n    margin:10px 0 20px;\n    max-height:300px;\n    overflow-y:scroll;\n}\n#chartwerk #list li{\n    border-bottom:1px solid lightgrey;\n    padding: 5px 0;\n}\n\n#chartwerk #list p{\n    text-align:left;\n    margin:1px 0;\n    line-height:14px;\n    padding:2px;\n    font-size:14px;\n}\n#chartwerk #list p span.list-hed{\n    font-size:12px;\n    color:grey;\n    display:inline-block;\n    width:25%;\n    word-wrap: normal;\n    line-height:14px;\n}\n::-webkit-scrollbar{\n  width: 6px;\n}\n\n::-webkit-scrollbar-track{\n  background: rgba(0, 0, 0, 0.1);\n  border-radius:5px;\n}\n\n::-webkit-scrollbar-thumb{\n  background: rgba(0, 0, 0, 0.4);\n  border-radius:5px;\n}\n.hidden{\n    display:none !important;\n}"
+    },
+    "template": {
+        "description": "Use this template to create a basic table.\n\nJust paste your table in; none of the usual chart configuration is required for this template.",
+        "icon": null,
+        "tags": [],
+        "title": "Data table"
+    },
+    "text": {
+        "annotations": [],
+        "author": "Josh Romero / IEEE Spectrum",
+        "chatter": "Separate records are maintained for each type of photovoltaic (PV) cell.",
+        "footnote": "",
+        "headline": "New Solar Efficiency Records Since 2015",
+        "legend": {
+            "active": false,
+            "double": {
+                "align": "l",
+                "background": true,
+                "inside": false,
+                "position": {
+                    "x": 10,
+                    "y": 10
+                },
+                "width": 500
+            },
+            "keys": [
+                {
+                    "color": "#E34E36",
+                    "text": ""
+                },
+                {
+                    "color": "#329CEB",
+                    "text": ""
+                },
+                {
+                    "color": "#8554BF",
+                    "text": ""
+                },
+                {
+                    "color": "#52B033",
+                    "text": ""
+                },
+                {
+                    "color": "#FF8F24",
+                    "text": ""
+                }
+            ],
+            "single": {
+                "align": "l",
+                "background": true,
+                "inside": false,
+                "position": {
+                    "x": 10,
+                    "y": 10
+                },
+                "width": 250
+            },
+            "title": ""
+        },
+        "source": "Source: <a href=\"https://www.nrel.gov/\">NREL</a>",
+        "title": "pv-records-table"
+    },
+    "ui": {
+        "datamap": [
+            {
+                "alias": "base axis",
+                "available": true,
+                "class": "base"
+            },
+            {
+                "alias": "value axis",
+                "available": true,
+                "class": "value"
+            },
+            {
+                "alias": "scale axis",
+                "available": true,
+                "class": "scale"
+            },
+            {
+                "alias": "data series",
+                "available": true,
+                "class": "series"
+            },
+            {
+                "alias": "faceting column",
+                "available": true,
+                "class": "facet"
+            },
+            {
+                "alias": "ignored column",
+                "available": true,
+                "class": "ignore"
+            }
+        ],
+        "rawData": "Date\tCell type\tCell category\tGroup(s)\tEfficiency (%)\n3/1/2016\tperovskite cells (not stabilized)\tEmerging PV\tKRICT; UNIST\t22.1\n3/1/2016\tquantum dot cells\tEmerging PV\tU. Toronto\t11.3\n2/1/2016\tCdTe\tThin-film Technologies\tFirst Solar\t22.1\n1/1/2016\ttwo-junction (non-concentrator)\tMultijunction Cells\tAlta Devices\t31.6\n12/1/2015\tperovskite cells (not stabilized)\tEmerging PV\tEPFL\t21\n11/1/2015\tmulticrystalline\tCrystalline Si Cells\tTrina Solar\t21.25\n11/1/2015\tquantum dot cells\tEmerging PV\tU. Toronto\t10.6\n10/1/2015\tsingle crystal (non-concentrator)\tCrystalline Si Cells\tSunPower\t25.2\n8/1/2015\tCIGS\tThin-film Technologies\tSolar Frontier\t22.3\n5/1/2015\tsingle crystal\tSingle-junction GaAs\tLG Electronics\t27.4\n5/1/2015\torganic cells (various types)\tEmerging PV\tHKUST\t11.5\n3/1/2015\tquantum dot cells\tEmerging PV\tU. Toronto\t9.9\n1/1/2015\tamorphous Si:H (stabilized)\tThin-film Technologies\tAIST\t13.6",
+        "size": "single"
+    }
+}
