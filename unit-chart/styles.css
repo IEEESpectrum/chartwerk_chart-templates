@@ -1,0 +1,71 @@
+
+#chartwerk {
+    font-family:'Theinhardt-Regular',sans-serif; 
+    width:620px;
+}
+#chartwerk.single{
+    width:300px;
+    max-width:100%;
+    overflow:hidden;
+    margin:0;
+}
+#chartwerk #headline {
+    font-family:'Theinhardt-Medium',sans-serif; ;
+    font-weight:normal;
+    font-size:24px;
+    line-height: 1.2;
+}
+#chartwerk #chatter {
+    font-size:14px;
+    line-height:19px;
+    margin:5px 0 10px;
+}
+#chartwerk #footnote,
+#chartwerk #source,
+#chartwerk #author {
+    font-size:11px;
+    color:grey;
+}
+#chartwerk #author {
+    text-align:right;
+}
+#chartwerk #chart{
+    background-color:white;
+    margin:3px;
+}
+#chartwerk #chart-legend, #chartwerk .chart-legend-container {
+    font-family:'Theinhardt-Regular',sans-serif;
+    font-size:14px;
+    line-height:19px;
+}
+#chartwerk .chart-legend-container .title {
+    margin-bottom:5px;
+}
+#chartwerk .chart-legend-container .key-label{
+    font:11px 'Theinhardt-Regular',sans-serif;
+}
+#chartwerk .chart-legend-container .key-color{
+    margin-right:2px;
+}
+#chartwerk .chart-legend-container .key{
+    margin-right:8px;
+}
+#chartwerk .annotation p{
+    font-family:'Theinhardt-Regular',sans-serif; 
+}
+#chartwerk #chart .tooltip{
+    font: 13px 'Theinhardt-Regular',sans-serif; 
+    opacity:0;
+    pointer-events:none;
+    background:rgba(255,255,255,.75);
+    padding:5px;
+    width:auto;
+}
+#chartwerk #chart .tooltip .title{
+    font-family: 'Theinhardt-Medium',sans-serif;
+    font-weight: normal;
+    fill:grey;
+}
+.facet.highlight {
+    // stroke: #000;
+}
