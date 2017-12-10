@@ -1,0 +1,89 @@
+#chartwerk {
+    font-family:'Theinhardt-Regular', sans-serif;  
+    width: 600px;
+}
+#chartwerk.single {
+    margin: 0;
+    overflow: hidden;
+    width: 300px;
+    max-width:100%;
+}
+#chartwerk #headline { 
+    font-size: 24px;
+    font-family:'Theinhardt-Medium', sans-serif; 
+    font-weight: normal;
+}
+#chartwerk #chatter {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#chartwerk #footnote,
+#chartwerk #source,
+#chartwerk #author {
+    color: grey;
+    font-size: 11px;
+}
+#chartwerk #author {
+    text-align: right;
+}
+#chartwerk #chart {
+    background-color: white;
+}
+#chartwerk #chart-legend .chart-legend-container .key-label {
+    font: 11px 'Theinhardt-Regular', sans-serif; 
+}
+#chartwerk #chart-legend .chart-legend-container .key-color {
+    margin-right: 2px;
+}
+#chartwerk #chart-legend .chart-legend-container .key {
+    margin-right: 8px;
+}
+#chartwerk .annotation p {
+    font-family:'Theinhardt-Regular', sans-serif; 
+}
+#chartwerk #chart .tooltip {
+    background: rgba(255,255,255,.75);
+    font: 13px 'Theinhardt-Regular', sans-serif; 
+    opacity: 0;
+    padding: 5px;
+    pointer-events: none;
+    width: auto;
+}
+#chartwerk #chart .tooltip .value {
+    font-family:'Theinhardt-Medium', sans-serif; 
+    font-weight: normal;
+}
+#chartwerk #chart path.line {
+    fill: none;
+    stroke-width: 2px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke: rgb(180,180,180);
+}
+.axis text {
+    fill: rgb(132,132,132);
+    font-family:'Theinhardt-Regular', sans-serif; 
+    font-size: 11px;
+}
+.y.axis line {
+    stroke-dasharray: 3px 3px;
+}
+.y.axis path {
+    display:none;
+}
+.y.axis .label {
+    font-family:'Theinhardt-Regular', sans-serif; 
+    font-weight: normal;
+}
+rect.shaded-area{
+    fill: #DDDDDD;
+}
+line.zero {
+    stroke: #000000;
+    stroke-width: 1px;
+}
