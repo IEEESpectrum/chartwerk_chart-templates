@@ -41,9 +41,9 @@
             "range": [
                 "#A7A7A7",
                 "#7A7A7A",
-                "#03A6E3"
+                "#D40A06"
             ],
-            "scheme": "categorical.highlight"
+            "scheme": "categorical.default"
         },
         "scale": {
             "prefix": "",
@@ -453,15 +453,15 @@
             "keys": [
                 {
                     "color": "#A7A7A7",
-                    "text": "Unadjusted"
+                    "text": ""
                 },
                 {
                     "color": "#7A7A7A",
-                    "text": "Adjusted for inflation"
+                    "text": ""
                 },
                 {
-                    "color": "#03A6E3",
-                    "text": "Adjusted for intensiy"
+                    "color": "#D40A06",
+                    "text": ""
                 }
             ],
             "single": {
