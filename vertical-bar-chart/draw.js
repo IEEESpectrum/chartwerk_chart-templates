@@ -152,31 +152,28 @@ function draw() {
               return v.prefix + comma(columnData.value) + v.suffix;
           });
 
-        var p = d3.mouse(this.parentElement.parentElement);
+        var p = d3.mouse(this.parentElement.parentElement.parentElement.parentElement);
+        console.log(this);
 
         d3.select('.tooltip')
             .style('opacity', 1)
             .style('top', function(){
-                var s = chartwerk.ui.size;
-
-                var h = werk.dims[s].height;
-
-                var pos = p[1] > (h / 2) ? p[1] + 10 : p[1] + 20;
-
-                return pos.toString() + 'px';
+                var s = chartwerk.ui.size,
+                    h = werk.dims[s].height,
+                    tipH = parseInt(d3.select(".tooltip").style("height"), 10),
+                    pos = p[1] > (h / 2) ?
+                        p[1] - (tipH + 5) : p[1] + 20;
+                return pos.toString() + "px";
             })
             .style("left", function(){
                 // We position either left or right of the mouse point based
                 // on whether we're past the midpoint of the chart. This protects
                 // against tooltips overflowing embedded iframes.
-                var s = chartwerk.ui.size;
-
-                var w = werk.dims[s].width;
-
-                var tipW = parseInt(d3.select(".tooltip").style("width"), 10);
-
-                var pos = p[0] > (w / 2) ? p[0] - (tipW - 20) : p[0] + 40;
-
+                var s = chartwerk.ui.size,
+                    w = werk.dims[s].width,
+                    tipW = parseInt(d3.select(".tooltip").style("width"), 10),
+                    pos = p[0] > (w / 2) ?
+                        p[0] - (tipW + 10) : p[0] + 15;
                 return pos.toString() + "px";
             });
     }
