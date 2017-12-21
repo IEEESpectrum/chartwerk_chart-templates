@@ -200,7 +200,7 @@ function draw(){
                     h = werk.dims[s].height,
                     tipH = parseInt(d3.select(".tooltip").style("height"), 10),
                     pos = p[1] > (h / 2) ?
-                        p[1] - 60 : p[1] + 5;
+                        p[1] - (tipH + 5) : p[1] + 15;
                 return pos.toString() + "px";
             })
             .style("left", function(){
