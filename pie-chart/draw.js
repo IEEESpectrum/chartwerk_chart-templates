@@ -58,9 +58,27 @@ function draw(){
       tooltip.style('opacity', 0);
     })
     .on('mousemove', function(d) {
+            var p = d3.mouse(this.parentElement.parentElement.parentElement);
       tooltip
-        .style("left", (d3.event.pageX + 10) + "px")
-        .style("top", (d3.event.pageY + 30 - d3.select('#chart').node().offsetTop) + "px");
+        .style("left", function(){
+            // We position either left or right of the mouse point based
+            // on whether we're past the midpoint of the chart. This protects
+            // against tooltips overflowing embedded iframes.
+            var s = chartwerk.ui.size,
+                w = werk.dims[s].width,
+                tipW = parseInt(d3.select(".tooltip").style("width"), 10),
+                pos = p[0] > (w / 2) ?
+                    p[0] - (tipW + 10) : p[0] + 15;
+            return pos.toString() + "px";
+        })
+        .style("top", function(){
+            var s = chartwerk.ui.size,
+                h = werk.dims[s].height,
+                tipH = parseInt(d3.select(".tooltip").style("height"), 10),
+                pos = p[1] > (h / 2) ?
+                    p[1] - (tipH + 5) : p[1] + 20;
+            return pos.toString() + "px";
+        });
     });
 
     var tooltip = d3.select("#chart")
