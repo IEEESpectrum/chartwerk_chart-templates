@@ -4,7 +4,7 @@ function draw(){
 
     var VALUE_KEY = chartwerk.datamap.value;
     var UNIT_SPACING = 4;
-    var UNITS_PER_ROW = size === 'double' ? 18 : 12;
+    var UNITS_PER_ROW = size === 'double' ? 10 : 6;
     var CHART_WIDTH = size === 'double' ? 620 : 300;
     
     var unitSize = ((CHART_WIDTH) / UNITS_PER_ROW) - UNIT_SPACING;
@@ -48,24 +48,46 @@ function draw(){
       .enter().append('g')
       .attr('class', 'facet');
     
-    facets.selectAll('.unit')
-      .data(function(d) {
-        return d;
-      })
-      .enter()
-      .append('rect')
-      .attr('class', 'unit')
-      .attr('width', unitSize)
-      .attr('height', unitSize)
-      .attr('fill', function(d) {
-        return werk.scales.color(d[chartwerk.datamap.scale]);
-      })
-      .attr('x', function(d) {
-        return d.idx % UNITS_PER_ROW * (unitSize + UNIT_SPACING);
-      })
-      .attr('y', function(d) {
-        return Math.floor(d.idx / UNITS_PER_ROW) * (unitSize + UNIT_SPACING);
-      });
+    if ( chartwerk.datamap.custom.image ) {
+        facets.selectAll('.unit')
+          .data(function(d) {
+            return d;
+          })
+          .enter()
+          .append('image')
+          .attr('class', 'unit')
+          .attr('width', unitSize)
+          .attr('height', unitSize)
+          .attr('xlink:href', function(d) {
+              return d[chartwerk.datamap.custom.image];
+          })
+          .attr('x', function(d) {
+            return d.idx % UNITS_PER_ROW * (unitSize + UNIT_SPACING);
+          })
+          .attr('y', function(d) {
+            return Math.floor(d.idx / UNITS_PER_ROW) * (unitSize + UNIT_SPACING);
+          });
+    }
+    else {
+        facets.selectAll('.unit')
+          .data(function(d) {
+            return d;
+          })
+          .enter()
+          .append('rect')
+          .attr('class', 'unit')
+          .attr('width', unitSize)
+          .attr('height', unitSize)
+          .attr('fill', function(d) {
+            return werk.scales.color(d[chartwerk.datamap.scale]);
+          })
+          .attr('x', function(d) {
+            return d.idx % UNITS_PER_ROW * (unitSize + UNIT_SPACING);
+          })
+          .attr('y', function(d) {
+            return Math.floor(d.idx / UNITS_PER_ROW) * (unitSize + UNIT_SPACING);
+          });
+    }
 
   facets
     .on('mouseover', function(d) {
