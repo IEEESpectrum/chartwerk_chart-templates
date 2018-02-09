@@ -43,7 +43,7 @@
                 "#7A7A7A",
                 "#03A6E3"
             ],
-            "scheme": "categorical.highlight"
+            "scheme": "categorical.default"
         },
         "scale": {
             "prefix": "",
@@ -60,10 +60,10 @@
                     "ticks": 7
                 }
             },
-            "label": "WTI crude oil, barrel",
-            "max": 130,
-            "min": null,
-            "prefix": "$",
+            "label": "Y Axis",
+            "max": null,
+            "min": 0,
+            "prefix": "",
             "shadedRegions": [],
             "suffix": ""
         }
@@ -382,13 +382,13 @@
             "bottom": 0.07999999999999996,
             "left": 0.05,
             "right": 0.020000000000000018,
-            "top": 0.06
+            "top": 0.08
         },
         "single": {
             "bottom": 0.10999999999999999,
             "left": 0.11,
             "right": 0.020000000000000018,
-            "top": 0.05
+            "top": 0.11
         }
     },
     "scripts": {
@@ -404,36 +404,13 @@
         "styles": "#chartwerk {\n    font-family:'Theinhardt-Regular', sans-serif; \n    width:620px;\n}\n#chartwerk.single{\n    width:300px;\n    max-width:100%;\n    overflow:hidden;\n    margin:0;\n}\n#chartwerk #headline {\n    font-family:'Theinhardt-Medium', sans-serif;\n    font-weight:normal;\n    font-size:24px;\n}\n#chartwerk #chatter {\n    font-size:14px;\n    line-height:19px;\n    margin:5px 0 10px;\n}\n#chartwerk #footnote,\n#chartwerk #source,\n#chartwerk #author {\n    font-size:11px;\n    color:grey;\n\n}\n#chartwerk #author {\n    text-align:right;\n}\n#chartwerk #chart{\n    background-color:white;\n}\n#chartwerk #chart-legend \n.chart-legend-container .key-label{\n    font:11px 'Theinhardt-Regular', sans-serif;\n}\n#chartwerk #chart-legend \n.chart-legend-container .key-color{\n    margin-right:2px;\n}\n#chartwerk #chart-legend \n.chart-legend-container .key{\n    margin-right:8px;\n}\n#chartwerk .annotation p{\n    font-family:'Theinhardt-Regular', sans-serif; \n}\n#chartwerk #chart .tooltip{\n    font: 13px 'Theinhardt-Regular', sans-serif; \n    opacity:0;\n    pointer-events:none;\n    background:rgba(255,255,255,.75);\n    padding:5px;\n    width:auto;\n    z-index:2;\n}\n#chartwerk #chart .tooltip .value{\n    font-family: 'Theinhardt-Medium', sans-serif;\n    font-weight: normal;\n}\n\n#chartwerk #chart path.line{\n    fill: none;\n    stroke-width: 2px;\n}\n\n.axis path,\n.axis line {\n  fill: none;\n  stroke: rgb(180,180,180);\n  shape-rendering: crispEdges;\n}\n.axis text{\n    font-family: 'Theinhardt-Regular', sans-serif;\n    fill: rgb(132,132,132);\n    font-size:11px;\n}\n.y.axis line{\n    stroke-dasharray: 3px 3px;\n}\n.y.axis path{\n    display:none;\n}\n.y.axis .label{\n    font-family: 'Theinhardt-Regular', sans-serif; \n    font-weight:normal;\n}\nline.dotted-line{\n    stroke:rgb(33,33,33);\n    stroke-width:1px;\n    stroke-dasharray: 7px 5px;\n}\nline.solid-line{\n    stroke:rgb(33,33,33);\n    stroke-width:1px;\n}\nrect.shaded-area{\n    fill:#ddd;\n}"
     },
     "template": {
-        "description": "Line charts are used to show continuous data over time. Examples include stock prices, temperatures, indexes and rates.\n\nThe X axis (base axis) on a line chart always runs along a date range, for example, 1992 to 2012. \n\nYour data should include one column of dates. Check out the available date formats on the Axes tab, and format your dates in your spreadsheet according to one of these.\n\nYou should have one column of data for each line in your chart.",
+        "description": "Line charts are used to show continuous data over time. Examples include stock prices, temperatures, indexes and rates.\n\nThe X axis (base axis) on a line chart always runs along a date range, for example, 1992 to 2012. \n\nYour data should include one column of dates. Check out the available date formats on the Axes tab, and format your dates in your spreadsheet according to one of these.\n\nYou should have one column of data for each line in your chart.\n\nIf you're more interested in showing aggregate trends over time, consider a stacked area chart instead.",
         "icon": null,
         "tags": [],
         "title": "Line chart"
     },
     "text": {
-        "annotations": [
-            {
-                "align": "c",
-                "background": true,
-                "color": "#2d3035",
-                "fontSize": "m",
-                "size": "d",
-                "text": "Oil is only about **3x** more expensive today than in 1970, not the **50x** more expensive it may appear",
-                "w": 139,
-                "x": 285,
-                "y": 76
-            },
-            {
-                "align": "l",
-                "background": true,
-                "color": "#2d3035",
-                "fontSize": "m",
-                "size": "s",
-                "text": "Oil is only about **3x** more expensive today",
-                "w": 83,
-                "x": 131,
-                "y": 27
-            }
-        ],
+        "annotations": [],
         "author": "Josh Romero/IEEE Spectrum",
         "chatter": "To make historical comparisons, it's important to adjust for both inflation and intensity of use.",
         "footnote": "",
@@ -472,7 +449,7 @@
                     "x": 10,
                     "y": 10
                 },
-                "width": 185.39999999999998
+                "width": 173.39584350585938
             },
             "title": ""
         },
@@ -513,6 +490,6 @@
             }
         ],
         "rawData": "year\tcrude price\tcrude price (inflation adjusted)\tcrude price (inflation and intensity adjusted)\n1970\t1.8\t10.98\t10.98\n1971\t2.24\t13.09\t13.11\n1972\t2.48\t14.05\t14.44\n1973\t3.29\t17.54\t18.03\n1974\t11.58\t55.61\t55.15\n1975\t11.53\t50.74\t49.39\n1976\t12.8\t53.26\t52.82\n1977\t13.92\t54.38\t54.44\n1978\t14.02\t50.91\t47.26\n1979\t31.61\t103.07\t90.79\n1980\t36.83\t105.81\t86.5\n1981\t35.93\t93.57\t69.48\n1982\t32.97\t80.88\t57.87\n1983\t29.55\t70.24\t47.68\n1984\t28.78\t65.58\t42.95\n1985\t27.56\t60.64\t37.94\n1986\t14.43\t31.17\t19.63\n1987\t18.44\t38.43\t23.87\n1988\t14.92\t29.86\t18.55\n1989\t18.23\t34.8\t20.83\n1990\t23.73\t42.98\t24.78\n1991\t20\t34.76\t19.61\n1992\t19.32\t32.6\t18.15\n1993\t16.97\t27.8\t15.19\n1994\t15.82\t25.27\t13.62\n1995\t17.02\t26.44\t13.83\n1996\t20.67\t31.19\t16.28\n1997\t19.09\t28.16\t14.26\n1998\t12.72\t18.47\t9.12\n1999\t17.97\t25.54\t12.38\n2000\t28.5\t39.18\t18.43\n2001\t24.44\t32.67\t15.22\n2002\t25.02\t32.92\t15.08\n2003\t28.83\t37.09\t16.82\n2004\t38.27\t47.96\t21.79\n2005\t54.52\t66.09\t29.16\n2006\t65.14\t76.49\t32.56\n2007\t72.39\t82.65\t34.49\n2008\t97.26\t106.94\t42.18\n2009\t61.67\t68.05\t26.28\n2010\t79.5\t86.31\t33.17\n2011\t111.26\t117.1\t43.49\n2012\t111.67\t115.14\t40.9\n2013\t108.66\t110.42\t39.03\n2014\t98.95\t98.95\t34.37\n2015\t50\t50\t18.37",
-        "size": "double"
+        "size": "single"
     }
 }
