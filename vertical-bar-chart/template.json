@@ -37,7 +37,7 @@
                 "reverseColors": false
             },
             "range": [
-                "#F75F08"
+                "#03A6E3"
             ],
             "scheme": "categorical.default"
         },
@@ -57,7 +57,7 @@
                 }
             },
             "label": "Trillions of US dollars",
-            "max": 10,
+            "max": null,
             "min": 0,
             "prefix": "",
             "shadedRegions": [],
@@ -103,15 +103,15 @@
     "margins": {
         "double": {
             "bottom": 0.09999999999999998,
-            "left": 0.06,
+            "left": 0.04,
             "right": 0,
-            "top": 0.12
+            "top": 0.04
         },
         "single": {
             "bottom": 0.09999999999999998,
             "left": 0.06,
             "right": 0,
-            "top": 0.12
+            "top": 0.04
         }
     },
     "scripts": {
@@ -200,6 +200,6 @@
             }
         ],
         "rawData": "Country\tGDP, US$ trillions\nIndia\t2.3\nChina\t11.3\t\n",
-        "size": "single"
+        "size": "double"
     }
 }
