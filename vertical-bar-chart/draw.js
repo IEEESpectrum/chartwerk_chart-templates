@@ -77,7 +77,7 @@ function draw() {
         .data(chartwerk.data)
         .enter().append('g')
             .attr('class', function(d) {
-                return d[chartwerk.datamap.base].toLowerCase() + '-group';
+                return d[chartwerk.datamap.base].toString().toLowerCase() + '-group';
             })
             .attr(
                 'transform',
