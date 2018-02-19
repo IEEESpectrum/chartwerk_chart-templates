@@ -1,0 +1,83 @@
+#chartwerk {
+    width:620px;
+}
+#chartwerk div{
+    font-family:"Theinhardt-Regular", sans-serif; 
+}
+#chartwerk.single{
+    width:300px;
+    max-width:100%;
+    overflow:hidden;
+}
+#chartwerk #headline { 
+    font-family:"Theinhardt-Medium", sans-serif;
+    font-weight:normal;
+    font-size:24px;
+}
+#chartwerk #chatter {
+    margin-top:5px;
+    font-size:14px;
+    line-height:19px;
+}
+#chartwerk #footnote,
+#chartwerk #source,
+#chartwerk #author {
+    font-size:11px;
+    color:grey;
+
+}
+#chartwerk #author {
+    text-align:right;
+}
+#chartwerk #chart{
+    background-color:white;
+    font-variant-numeric: tabular-nums;
+    font-variant-numeric: tabular-nums;
+    -moz-font-feature-settings: "tnum";
+    -webkit-font-feature-settings: "tnum";
+    font-feature-settings: "tnum";
+}
+#chartwerk .response {
+    margin-top:10px;
+}
+#chartwerk .response p{
+    font: 13px/16px "Theinhardt-Regular", sans-serif;
+}
+#chartwerk #chart .bar{
+    height:24px;
+    display:block;
+    margin-top:2px;
+}
+#chartwerk #chart .bar .label{
+    width:100%;
+    text-align:right;
+}
+#chartwerk #chart .response .name.label{
+    width:100%;
+    text-align:right;
+    padding:0 5px 0 0;
+    margin-left:-100%;
+    position:absolute;
+    color:#666;
+    line-height: 50px;
+    height: 50px;
+    border-right: 1px #666 solid;
+    border-radius: 0;
+}
+#chartwerk #chart .bar .value.label p{
+    padding-right:5px;
+    padding-top:4px;
+    font-family:"Theinhardt-Medium", sans-serif;
+    font-weight:normal;
+    font-size:14px;
+    line-height:18px;
+    color:#fff;
+}
+#chartwerk #chart .bar .value.label p.offset{
+    text-align:left;
+    padding-left:3px;
+    color:#666;
+}
+#chart .annotation .inner {
+    height:5px;
+}
