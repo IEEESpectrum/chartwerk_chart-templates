@@ -62,7 +62,7 @@ var werkHelper = {
         werk.scales.x0.domain(
             chartwerk.data.map(
                 function(dataPoint) { return dataPoint[chartwerk.datamap.base]; }
-            ).sort()
+            )
         );
         werk.scales.x1.domain(keys).rangeRound([0, werk.scales.x0.bandwidth()]);
     },
