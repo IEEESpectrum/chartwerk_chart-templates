@@ -220,8 +220,8 @@
                 "class": "scale"
             },
             {
-                "alias": "data series",
-                "available": false,
+                "alias": "Grouped value",
+                "available": true,
                 "class": "series"
             },
             {
