@@ -23,8 +23,7 @@ function draw(){
             werk.dims.margins.right + "px " +
             werk.dims.margins.bottom + "px " +
             werk.dims.margins.left + "px "
-        )
-        .style("max-height", "auto");
+        );
     
     var response = div.selectAll(".response")
         .data(chartwerk.data)
@@ -33,11 +32,13 @@ function draw(){
     
     response.append("div")
         .attr("class","name label")
+        .style("height", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px')
+        .style("width", werk.dims.margins.left + 'px')
+        .style("margin-left", "-" + werk.dims.margins.left + 'px')
+      .append("p")
         .text(function(d){
             return d[chartwerk.datamap.base];
-        })
-        .style("height", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px')
-        .style("line-height", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px');
+        });
 
     var bar = response.selectAll(".bar")
         .data(
