@@ -7,6 +7,9 @@ function draw(){
         },
     };
     
+    var barHeight = 24;
+    var barSpace = 2;
+    
     // Returns object with properties and methods representing
     // dimensions, scales, axes, etc.
     var werk = werkHelper.build(initialProps);
@@ -20,7 +23,8 @@ function draw(){
             werk.dims.margins.right + "px " +
             werk.dims.margins.bottom + "px " +
             werk.dims.margins.left + "px "
-        );
+        )
+        .style("max-height", "auto");
     
     var response = div.selectAll(".response")
         .data(chartwerk.data)
@@ -31,7 +35,9 @@ function draw(){
         .attr("class","name label")
         .text(function(d){
             return d[chartwerk.datamap.base];
-        });
+        })
+        .style("height", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px')
+        .style("line-height", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px');
 
     var bar = response.selectAll(".bar")
         .data(
@@ -46,7 +52,9 @@ function draw(){
         .style("background-color", function(d) { 
             return werk.scales.color(d.key); 
         })
-        .style("width", function(d){ return werk.scales.x(d.value) + 'px'; });
+        .style("width", function(d){ return werk.scales.x(d.value) + 'px'; })
+        .style("height", barHeight + 'px')
+        .style("margin-top", barSpace + 'px');
         
     bar.append("div")
         .attr("class","value label")
@@ -63,6 +71,7 @@ function draw(){
             return werk.scales.x(d.value) < 75 ?
                 this.parentElement.parentElement.clientWidth + 'px' : '';
         })
+        .style("line-height", barHeight + 'px')
         .text(function(d){
             return chartwerk.axes.value.prefix + comma(String(d.value)) + chartwerk.axes.value.suffix;
         });
