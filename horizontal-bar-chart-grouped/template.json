@@ -33,7 +33,8 @@
             "byFacet": false,
             "domain": [
                 "2016",
-                "2017"
+                "2017",
+                "2018"
             ],
             "ignoreScale": false,
             "quantize": false,
@@ -44,7 +45,8 @@
             },
             "range": [
                 "#03A6E3",
-                "#48B44C"
+                "#48B44C",
+                "#F5CD09"
             ],
             "scheme": "categorical.default"
         },
@@ -75,63 +77,74 @@
         {
             "2016": 40,
             "2017": 20,
-            "Company": "Bosch"
+            "2018": 23,
+            "Year": "Bosch"
         },
         {
             "2016": 0,
             "2017": 5,
-            "Company": "Faraday Future"
+            "2018": 31,
+            "Year": "Faraday Future"
         },
         {
             "2016": 26,
             "2017": 13,
-            "Company": "Lucid"
+            "2018": 3,
+            "Year": "Lucid"
         },
         {
             "2016": 0,
             "2017": 11,
-            "Company": "Mercedes"
+            "2018": 12,
+            "Year": "Mercedes"
         },
         {
             "2016": 0,
             "2017": 31,
-            "Company": "Peloton"
+            "2018": 33,
+            "Year": "Peloton"
         },
         {
             "2016": 37,
             "2017": 0,
-            "Company": "Torc"
+            "2018": 22,
+            "Year": "Torc"
         },
         {
             "2016": 28,
             "2017": 21,
-            "Company": "Embark"
+            "2018": 11,
+            "Year": "Embark"
         },
         {
             "2016": 0,
             "2017": 1,
-            "Company": "Rivian"
+            "2018": 14,
+            "Year": "Rivian"
         },
         {
             "2016": 0,
             "2017": 3,
-            "Company": "Zoox"
+            "2018": 23,
+            "Year": "Zoox"
         }
     ],
     "datamap": {
-        "base": "Company",
+        "base": "Year",
         "custom": {},
         "facet": null,
         "ignore": [],
         "scale": null,
         "series": [
             "2016",
-            "2017"
+            "2017",
+            "2018"
         ],
         "sort": [
             "2016",
             "2017",
-            "Company"
+            "2018",
+            "Year"
         ],
         "value": null
     },
@@ -155,8 +168,8 @@
             "top": 0.04
         },
         "single": {
-            "bottom": 0.040000000000000036,
-            "left": 0.14,
+            "bottom": 0.06999999999999995,
+            "left": 0.25,
             "right": 0,
             "top": 0.04
         }
@@ -168,10 +181,10 @@
             ],
             "styles": []
         },
-        "draw": "function draw(){\n\n    var initialProps = {\n        dims: {\n          single: { width: 300, height: 225 },\n          double: { width: 620, height: 250}\n        },\n    };\n    \n    // Returns object with properties and methods representing\n    // dimensions, scales, axes, etc.\n    var werk = werkHelper.build(initialProps);\n    \n    var comma = d3.format(\",\");\n    \n    var div = d3.select(\"#chart\")\n        .append(\"div\")\n        .style(\"margin\", \n            werk.dims.margins.top + \"px \" +\n            werk.dims.margins.right + \"px \" +\n            werk.dims.margins.bottom + \"px \" +\n            werk.dims.margins.left + \"px \"\n        );\n    \n    var response = div.selectAll(\".response\")\n        .data(chartwerk.data)\n      .enter().append(\"div\")\n        .attr(\"class\",\"response\");\n    \n    response.append(\"div\")\n        .attr(\"class\",\"name label\")\n        .text(function(d){\n            return d[chartwerk.datamap.base];\n        });\n\n    var bar = response.selectAll(\".bar\")\n        .data(\n            function(d) {\n                var keys = chartwerk.axes.color.domain.sort();\n\n                return keys.map(function(key) { return {key: key, value: d[key]}; });\n            }\n        )\n      .enter().append(\"div\")\n        .attr(\"class\", \"bar\")\n        .style(\"background-color\", function(d) { \n            return werk.scales.color(d.key); \n        })\n        .style(\"width\", function(d){ return werk.scales.x(d.value) + 'px'; });\n        \n    bar.append(\"div\")\n        .attr(\"class\",\"value label\")\n      .append(\"p\")\n        .attr(\"class\", function(d){\n            return werk.scales.x(d.value) < 75 ?\n                'offset' : '';\n        })\n        .style(\"width\", function(d){\n            return werk.scales.x(d.value) < 75 ?\n                werk.dims.div.width - this.parentElement.parentElement.clientWidth + 'px' : '';\n        })\n        .style(\"margin-left\", function(d){\n            return werk.scales.x(d.value) < 75 ?\n                this.parentElement.parentElement.clientWidth + 'px' : '';\n        })\n        .text(function(d){\n            return chartwerk.axes.value.prefix + comma(String(d.value)) + chartwerk.axes.value.suffix;\n        });\n    \n\n}",
+        "draw": "function draw(){\n\n    var initialProps = {\n        dims: {\n          single: { width: 300, height: 225 },\n          double: { width: 620, height: 250}\n        },\n    };\n    \n    var barHeight = 24;\n    var barSpace = 2;\n    \n    // Returns object with properties and methods representing\n    // dimensions, scales, axes, etc.\n    var werk = werkHelper.build(initialProps);\n    \n    var comma = d3.format(\",\");\n    \n    var div = d3.select(\"#chart\")\n        .append(\"div\")\n        .style(\"margin\", \n            werk.dims.margins.top + \"px \" +\n            werk.dims.margins.right + \"px \" +\n            werk.dims.margins.bottom + \"px \" +\n            werk.dims.margins.left + \"px \"\n        )\n        .style(\"max-height\", \"auto\");\n    \n    var response = div.selectAll(\".response\")\n        .data(chartwerk.data)\n      .enter().append(\"div\")\n        .attr(\"class\",\"response\");\n    \n    response.append(\"div\")\n        .attr(\"class\",\"name label\")\n        .text(function(d){\n            return d[chartwerk.datamap.base];\n        })\n        .style(\"height\", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px')\n        .style(\"line-height\", ((chartwerk.axes.color.domain.length * barHeight) + ((chartwerk.axes.color.domain.length - 1) * barSpace)) + 'px');\n\n    var bar = response.selectAll(\".bar\")\n        .data(\n            function(d) {\n                var keys = chartwerk.axes.color.domain.sort();\n\n                return keys.map(function(key) { return {key: key, value: d[key]}; });\n            }\n        )\n      .enter().append(\"div\")\n        .attr(\"class\", \"bar\")\n        .style(\"background-color\", function(d) { \n            return werk.scales.color(d.key); \n        })\n        .style(\"width\", function(d){ return werk.scales.x(d.value) + 'px'; })\n        .style(\"height\", barHeight + 'px')\n        .style(\"margin-top\", barSpace + 'px');\n        \n    bar.append(\"div\")\n        .attr(\"class\",\"value label\")\n      .append(\"p\")\n        .attr(\"class\", function(d){\n            return werk.scales.x(d.value) < 75 ?\n                'offset' : '';\n        })\n        .style(\"width\", function(d){\n            return werk.scales.x(d.value) < 75 ?\n                werk.dims.div.width - this.parentElement.parentElement.clientWidth + 'px' : '';\n        })\n        .style(\"margin-left\", function(d){\n            return werk.scales.x(d.value) < 75 ?\n                this.parentElement.parentElement.clientWidth + 'px' : '';\n        })\n        .style(\"line-height\", barHeight + 'px')\n        .text(function(d){\n            return chartwerk.axes.value.prefix + comma(String(d.value)) + chartwerk.axes.value.suffix;\n        });\n    \n\n}",
         "helper": "var werkHelper = {\n    parse: function(werk){\n        if (chartwerk.datamap.base === null) {\n            // If the chart doesn't have a base axis, raise an error.\n        } else {\n            // Otherwise, parse the data as passed.\n            werk.data = chartwerk.axes.color.domain.map(function(category){\n                return {\n                    name: category,\n                    values: chartwerk.data.map(function(d){\n                        return { x: d[chartwerk.datamap.base], y: d[category] };\n                    })\n                };\n            });\n        }\n    },\n    \n    dims: function(werk){\n        var s = chartwerk.ui.size;\n            w = werk.dims[s].width,\n            h = werk.dims[s].height,\n            // Add a little extra left margin to accomondate labels\n            maxLen = d3.max(werk.data, function(d){ return d.name.length; })\n            margins = {\n                right: chartwerk.margins[s].right * w,\n                left: chartwerk.margins[s].left * w + (maxLen * 4),\n                top: chartwerk.margins[s].top * h,\n                bottom: chartwerk.margins[s].bottom * h\n            },\n            div = {\n                width: w - margins.left - margins.right,\n                height: h - margins.top - margins.bottom\n            };\n            // console.log(maxLen);\n        \n        \n        werk.dims.margins = margins;\n        werk.dims.div = div;\n    },\n\n    scales: function(werk){\n        var div = werk.dims.div;\n        werk.scales = {\n            x: d3.scaleLinear()\n                .range([0, div.width]),\n            y0: d3.scaleBand()\n                    .rangeRound([0, 1]),\n            y1: d3.scaleBand()\n                    .padding(0.05),\n            color: chartwerk.axes.color.range.length > 1 ? (\n                d3.scaleOrdinal()\n                  .domain(chartwerk.axes.color.domain)\n                  .range(chartwerk.axes.color.range)\n            ) : (\n                function(d) { return chartwerk.axes.color.range[0]; }\n            )\n        };\n    },\n    \n    baseDomain:  function(werk) {\n        var keys = chartwerk.axes.color.domain;\n\n        werk.scales.y0.domain(\n            chartwerk.data.map(\n                function(dataPoint) { return dataPoint[chartwerk.datamap.base]; }\n            ).sort()\n        );\n        werk.scales.y1.domain(keys).rangeRound([0, werk.scales.x0.bandwidth()]);\n    },\n    \n    valueDomain: function(werk) {\n        var keys = chartwerk.axes.color.domain;\n\n        var useDefaultMin = (\n            (chartwerk.axes.value.min !== null) &&\n            (!isNaN(chartwerk.axes.value.min))\n        );\n\n        var dataMin = (useDefaultMin) ? (chartwerk.axes.value.min) : (\n            d3.min(chartwerk.data, function(d) {\n                return d3.min(keys, function(key) { return d[key]; });\n            })\n        );\n\n        if ((!useDefaultMin) && (dataMin > 0)) { dataMin = 0; }\n\n        var useDefaultMax = (\n            (chartwerk.axes.value.max !== null) &&\n            (!isNaN(chartwerk.axes.value.max))\n        );\n\n        var dataMax = (useDefaultMax) ? (chartwerk.axes.value.max) : (\n            d3.max(chartwerk.data, function(d) {\n                return d3.max(keys, function(key) { return d[key]; });\n            })\n        );\n\n        var extents = {\n            min: dataMin,\n            max: dataMax\n        };\n\n        werk.scales.x.domain([extents.min, extents.max]).nice();\n    },\n\n\n    // Build dims, scales and axes.\n    build: function(werk){\n        this.parse(werk);\n        this.dims(werk);\n        this.scales(werk);\n        this.valueDomain(werk);\n        return werk;\n    },\n};",
         "html": "<div id='chart-header'>\n\t<h2 id='headline'></h2>\n\t<div id='chatter'></div> \n</div> \n<div id='chart-ui'>\n\t<!--You can put any necessary buttons, etc., here.-->\n</div>\n<div id='chart-legend'></div>\n<div id='chart'></div> \n<div id='chart-footer'> \n\t<div id='footnote'></div> \n\t<div id='source'></div> \n\t<div id='author'></div> \n</div>",
-        "styles": "#chartwerk {\n    width:620px;\n}\n#chartwerk div{\n    font-family:\"Theinhardt-Regular\", sans-serif; \n}\n#chartwerk.single{\n    width:300px;\n    max-width:100%;\n    overflow:hidden;\n}\n#chartwerk #headline { \n    font-family:\"Theinhardt-Medium\", sans-serif;\n    font-weight:normal;\n    font-size:24px;\n}\n#chartwerk #chatter {\n    margin-top:5px;\n    font-size:14px;\n    line-height:19px;\n}\n#chartwerk #footnote,\n#chartwerk #source,\n#chartwerk #author {\n    font-size:11px;\n    color:grey;\n\n}\n#chartwerk #author {\n    text-align:right;\n}\n#chartwerk #chart{\n    background-color:white;\n    font-variant-numeric: tabular-nums;\n    font-variant-numeric: tabular-nums;\n    -moz-font-feature-settings: \"tnum\";\n    -webkit-font-feature-settings: \"tnum\";\n    font-feature-settings: \"tnum\";\n}\n#chartwerk .response {\n    margin-top:10px;\n}\n#chartwerk .response p{\n    font: 13px/16px \"Theinhardt-Regular\", sans-serif;\n}\n#chartwerk #chart .bar{\n    height:24px;\n    display:block;\n    margin-top:2px;\n}\n#chartwerk #chart .bar .label{\n    width:100%;\n    text-align:right;\n}\n#chartwerk #chart .response .name.label{\n    width:100%;\n    text-align:right;\n    padding:0 5px 0 0;\n    margin-left:-100%;\n    position:absolute;\n    color:#666;\n    line-height: 50px;\n    height: 50px;\n    border-right: 1px #666 solid;\n    border-radius: 0;\n}\n#chartwerk #chart .bar .value.label p{\n    padding-right:5px;\n    padding-top:4px;\n    font-family:\"Theinhardt-Medium\", sans-serif;\n    font-weight:normal;\n    font-size:14px;\n    line-height:18px;\n    color:#fff;\n}\n#chartwerk #chart .bar .value.label p.offset{\n    text-align:left;\n    padding-left:3px;\n    color:#666;\n}\n#chart .annotation .inner {\n    height:5px;\n}\n"
+        "styles": "#chartwerk {\n    width:620px;\n}\n#chartwerk div{\n    font-family:\"Theinhardt-Regular\", sans-serif; \n}\n#chartwerk.single{\n    width:300px;\n    max-width:100%;\n    overflow:hidden;\n}\n#chartwerk #headline { \n    font-family:\"Theinhardt-Medium\", sans-serif;\n    font-weight:normal;\n    font-size:24px;\n}\n#chartwerk #chatter {\n    margin-top:5px;\n    font-size:14px;\n    line-height:19px;\n}\n#chartwerk #footnote,\n#chartwerk #source,\n#chartwerk #author {\n    font-size:11px;\n    color:grey;\n\n}\n#chartwerk #author {\n    text-align:right;\n}\n#chartwerk #chart{\n    background-color:white;\n    font-variant-numeric: tabular-nums;\n    font-variant-numeric: tabular-nums;\n    -moz-font-feature-settings: \"tnum\";\n    -webkit-font-feature-settings: \"tnum\";\n    font-feature-settings: \"tnum\";\n}\n#chartwerk .response {\n    margin-top:10px;\n}\n#chartwerk .response p{\n    font: 13px/16px \"Theinhardt-Regular\", sans-serif;\n}\n#chartwerk #chart .bar{\n    display:block;\n}\n#chartwerk #chart .bar .label{\n    width:100%;\n    text-align:right;\n}\n#chartwerk #chart .response .name.label{\n    width:100%;\n    text-align:right;\n    padding:0 5px 0 0;\n    margin-left:-100%;\n    position:absolute;\n    color:#666;\n    border-right: 1px #666 solid;\n    border-radius: 0;\n}\n#chartwerk #chart .bar .value.label p{\n    padding-right:5px;\n    margin-bottom: 0;\n    font-family:\"Theinhardt-Medium\", sans-serif;\n    font-weight:normal;\n    font-size:14px;\n    color:#fff;\n}\n#chartwerk #chart .bar .value.label p.offset{\n    text-align:left;\n    padding-left:3px;\n    color:#666;\n}\n#chart .annotation .inner {\n    height:5px;\n}\n"
     },
     "template": {
         "description": "Use horizontal bar charts when you want to show comparisons of quantity. Examples include population by city, touchdowns by player or sales by vehicle model.\n\nAs a general rule, horizontal bar charts should not be used to show trends over time, for example, how many homes are purchased each year. Use a line chart instead.\n\nYour data should contain two columns:\n\n* One with the categorical labels, like \"Dallas\", \"Philadelphia\", \"Los Angeles\", etc.\n* And another that contains the numeric values that will determine the width of the bars. ",
@@ -186,7 +199,7 @@
         "footnote": "*predicted 2016 sales",
         "headline": "Global Smartphone Sales",
         "legend": {
-            "active": true,
+            "active": false,
             "double": {
                 "align": "l",
                 "background": true,
@@ -200,11 +213,15 @@
             "keys": [
                 {
                     "color": "#03A6E3",
-                    "text": "2016"
+                    "text": ""
                 },
                 {
                     "color": "#48B44C",
-                    "text": "2017"
+                    "text": ""
+                },
+                {
+                    "color": "#F5CD09",
+                    "text": ""
                 }
             ],
             "single": {
@@ -255,7 +272,7 @@
                 "class": "ignore"
             }
         ],
-        "rawData": "Company \t2016\t2017\nBosch\t40\t20\nFaraday Future \t0\t5\nLucid\t26\t13\nMercedes \t0\t11\nPeloton\t0\t31\nTorc\t37\t0\nEmbark\t28\t21\nRivian\t0\t1\nZoox\t0\t3",
-        "size": "double"
+        "rawData": "Year \t2016\t2017\t2018\nBosch\t40\t20\t23\nFaraday Future \t0\t5\t31\nLucid\t26\t13\t3\nMercedes \t0\t11\t12\nPeloton\t0\t31\t33\nTorc\t37\t0\t22\nEmbark\t28\t21\t11\nRivian\t0\t1\t14\nZoox\t0\t3\t23\n",
+        "size": "single"
     }
 }
