@@ -51,14 +51,18 @@
     text-align:right;
 }
 #chartwerk #chart .response .name.label{
-    width:100%;
+    white-space:normal;
+    display: table;
     text-align:right;
     padding:0 5px 0 0;
-    margin-left:-100%;
     position:absolute;
     color:#666;
     border-right: 1px #666 solid;
     border-radius: 0;
+}
+#chartwerk #chart .response .name.label p{
+    display: table-cell; 
+    vertical-align: middle; 
 }
 #chartwerk #chart .bar .value.label p{
     padding-right:5px;
@@ -76,3 +80,14 @@
 #chart .annotation .inner {
     height:5px;
 }
+
+#chartwerk #chart-legend .chart-legend-container .key-label {
+    font: 11px 'Theinhardt-Regular', sans-serif; 
+}
+#chartwerk #chart-legend .chart-legend-container .key-color {
+    margin-right: 2px;
+}
+#chartwerk #chart-legend .chart-legend-container .key {
+    margin-right: 8px;
+}
+
