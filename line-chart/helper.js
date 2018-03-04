@@ -88,7 +88,11 @@ var werkHelper = {
                     return d.y; 
                 }); 
             }),
-            yMin = 0;
+            yMin = d3.min(werk.data, function(category) {
+                return d3.min(category.values, function(d){ 
+                    return d.y; 
+                }); 
+            });
         
         if ((chartwerk.axes.value.min || chartwerk.axes.value.min === 0) && (chartwerk.axes.value.max || chartwerk.axes.value.max === 0)) {
             werk.scales.y.domain(
